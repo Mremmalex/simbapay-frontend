@@ -1,0 +1,69 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+:root {
+	--pr-900: #20123c;
+	--pr-700: #271e4b;
+	--wr-900: #bababa;
+	--wr-700: #a9a9a9;
+	--er-900: #9d0000;
+	--er-700: #3f0e0e;
+	--ss-900: #00670c;
+	--ss-700: ##1d9c00;
+	--sm-screen: 370px;
+	--md-screen: 530px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+	margin: 0;
+}
+body {
+	background-color: var(--pr-700);
+	color: var(--wr-700);
+}
+
+a {
+	text-decoration: none;
+}
+
+.flex {
+	display: flex;
+	grid: 2em;
+}
+
+.m-left {
+	margin-left: 1em;
+}
+
+.svg {
+	width: 1em;
+	height: 1em;
+}
+
+li {
+	list-style-type: none;
+}

@@ -1,0 +1,47 @@
+.sidebar {
+	grid-column: span 1 / span 2;
+	// box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.3);
+	border-right: 0.2em solid var(--pr-900);
+	width: 18em;
+
+	.menu {
+		width: 100%;
+		margin: 0 auto;
+
+		li {
+			margin-top: 0.8em;
+			padding-top: 0.1em;
+			height: 2.3em;
+			background-color: var(--wr-900);
+			color: var(--pr-900);
+			border-radius: 1em;
+			text-align: center;
+			cursor: pointer;
+			place-content: center;
+
+			&:hover {
+				transform: scale(0.9, 1);
+			}
+		}
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 1em;
+			color: var(--pr-900);
+			font-size: 1.3em;
+			font-weight: 400;
+			&:hover {
+				font-weight: bold;
+			}
+		}
+	}
+}
+// .active {
+// 	a {
+// 		font-weight: bold;
+// 	}
+// }
+
+@media screen and (max-width: 660px) {
+}

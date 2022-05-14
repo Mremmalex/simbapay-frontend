@@ -1,0 +1,41 @@
+.auth {
+	width: 30em;
+	height: 25em;
+	background-color: var(--wr-900);
+	color: var(--pr-900);
+	border-radius: 2em;
+	align-items: center;
+
+	margin: 0 auto;
+	margin-top: 5em;
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+	justify-content: center;
+	a {
+		display: block;
+		padding: 1em 1em;
+		color: var(--wr-900);
+		background-color: var(--pr-900);
+		text-align: center;
+		width: 15em;
+		border-radius: 2em;
+
+		&:hover {
+			color: var(--pr-900);
+			border: 1px solid var(--pr-900);
+			background-color: var(--wr-900);
+		}
+
+		&:nth-child(2) {
+			color: var(--pr-900);
+			border: 1px solid var(--pr-900);
+			background-color: var(--wr-900);
+
+			&:hover {
+				background-color: var(--pr-900);
+				color: var(--wr-900);
+			}
+		}
+	}
+}
