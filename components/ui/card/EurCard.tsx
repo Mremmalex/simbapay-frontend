@@ -32,6 +32,9 @@ function EurCard({ eur }: Prop) {
 					</svg>
 					<h2>{eur.balance}</h2>
 				</div>
+				<div>
+					<h5>Account Number : {eur.account_num}</h5>
+				</div>
 			</div>
 		</Card>
 	);

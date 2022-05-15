@@ -32,6 +32,9 @@ function NairaCard({ ngn }: Prop) {
 					</svg>
 					<h2>{ngn.balance}</h2>
 				</div>
+				<div>
+					<h5>Account Number : {ngn.account_num}</h5>
+				</div>
 			</div>
 		</Card>
 	);

@@ -32,6 +32,9 @@ function UsdCard({ usd }: Prop) {
 					</svg>
 					<h2>{usd.balance}</h2>
 				</div>
+				<div>
+					<h5>Account Number : {usd.account_num}</h5>
+				</div>
 			</div>
 		</Card>
 	);
