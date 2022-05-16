@@ -2,7 +2,7 @@ import axios from "axios";
 
 const base = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-const authbase = `${base}/api/auth/`;
+const authbase = `${base}/api/auth`;
 
 export function getUserAccounts() {
 	return axios
@@ -13,7 +13,7 @@ export function getUserAccounts() {
 export function getAccountDetails(currency: string, account: string) {
 	return axios
 		.post(
-			`${authbase}accountDetails`,
+			`${authbase}/accountDetails`,
 			{
 				currency,
 				account_num: account,

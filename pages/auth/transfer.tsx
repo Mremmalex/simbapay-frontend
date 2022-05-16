@@ -1,4 +1,3 @@
-import { log } from "console";
 import React, { memo, useContext, useState } from "react";
 import { NestedLayout } from "../../components/layout";
 import { Container } from "../../components/ui";
@@ -36,9 +35,11 @@ function Transfer() {
 		if (accountNum.trim().length == 10) {
 			try {
 				const res = await getAccountDetails(currency, accountNum);
-				setUser(res.data.username);
+				if (res.data) setUser(res.data.username);
+				else setUser(res.message);
 			} catch (e: any) {
-				setErrors(e.response.error);
+				setErrors(e.response.message);
+				// console.log(e);
 			}
 		}
 	};
@@ -53,12 +54,15 @@ function Transfer() {
 			);
 			console.log(res);
 		} catch (e: any) {
-			console.log(e.response.message);
+			setErrors(e.response.data.message);
+			// console.log(e.response.data.message);
 		}
 
 		setAccountNum("");
 		setCurrency("EUR");
 		setAmount("");
+		setUser("");
+		setErrors("");
 	};
 	return (
 		<>
@@ -66,6 +70,7 @@ function Transfer() {
 				<Container>
 					<div className={styles.transfer}>
 						<h2>Send Money</h2>
+						{errors ? <span>{errors}</span> : ""}
 						<div className={styles.form}>
 							<form onSubmit={handleTransfer}>
 								<select

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const base = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-const baseUrl = `${base}/api/`;
+const baseUrl = `${base}/api`;
 const userbase = `${base}/api/auth/register`;
 
 const authbase = `${base}/api/auth/login`;

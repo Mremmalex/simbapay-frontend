@@ -2,7 +2,7 @@ import axios from "axios";
 
 const base = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-const authbase = `${base}/api/auth/`;
+const authbase = `${base}/api/auth`;
 
 export function makeTransfer(
 	currency: string,
