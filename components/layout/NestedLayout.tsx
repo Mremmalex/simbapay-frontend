@@ -9,12 +9,15 @@ import Sidebar from "./sidebar/Sidebar";
 function NestedLayout({ children }: { children: React.ReactNode }) {
 	const router = useRouter();
 	const useUserContext = useContext(userContext);
-
 	useEffect(() => {
 		const token = localStorage.getItem("token");
 		if (!token) {
 			router.push("/login");
 		}
+	}, []);
+
+	useEffect(() => {
+		const token = localStorage.getItem("token");
 		if (token) {
 			const user = async () => {
 				try {

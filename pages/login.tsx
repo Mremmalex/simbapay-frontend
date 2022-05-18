@@ -27,11 +27,12 @@ export default function Login() {
 				email: res.data.email,
 			};
 			useUserContext.addUserSession(payload);
-			localStorage.setItem("user", res.data);
+			// localStorage.setItem("user", JSON.stringify(res.data));
 			localStorage.setItem("token", res.token);
 			router.push("/auth/dashboard");
 		} catch (e: any) {
-			setErrors(e.response.data.error);
+			setErrors(e.response.data.message);
+			// console.log(e.response.data.message);
 		}
 	};
 	return (

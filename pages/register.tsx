@@ -3,6 +3,7 @@ import { Container } from "../components/ui";
 import style from "./Register.module.scss";
 import { registerUser } from "./api";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface FormError {
 	usernameError: string;
@@ -18,16 +19,22 @@ function Register() {
 	const [success, setSuccess] = useState("");
 	// const errorMessage: FormError = {};
 
+	const router = useRouter();
+
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		try {
 			const res = await registerUser({ username, email, password });
 			setSuccess(res.message);
+			router.push("/login");
 			setUsername("");
 			setEmail("");
 			setPassword("");
 		} catch (e: any) {
 			setErrors(e.response.data.error);
+			setUsername("");
+			setEmail("");
+			setPassword("");
 		}
 	};
 	return (
